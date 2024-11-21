@@ -1,15 +1,23 @@
 #!/usr/bin/env python3
 
-from modules.design import afficherLogo, texteRouge, texteVert, texteBleu, texteJaune
+import sys
+from modules.design import afficherLogo, texteRouge, texteVert, texteBleu, texteJaune, texteBlanc, texteMagenta, separateur
 from modules.system import effacerTerminal
 import time
+
+def help():
+    effacerTerminal()
+    print("Ensemble des commandes : \n\n")
 
 def main():
     effacerTerminal()
     afficherLogo()
-    print("\n\n\n")
-    choix = str(input("[*] Choisissez un script\n1 - Checkeur de Ports (machine)\n2 - Checkeur de Ports (cible)\n>> "))
+    separateur()
+    print(texteMagenta("[*]   Choisissez un script\n\n[1] - Checkeur de Ports (machine)\n[2] - Checkeur de Ports (cible)\n"))
+    choix = str(input(">> "))
     if choix ==  "1":
+        pass
+    elif choix == "2":
         pass
     else:
         effacerTerminal()
@@ -17,4 +25,7 @@ def main():
         time.sleep(0.75)
         main()
 
-main()
+if len(sys.argv) > 1 and sys.argv[1] in ["-help", "--help", "-h", "--h"]:
+    help()
+elif len(sys.argv) > 1 and sys.argv[1] == "-c":
+    main()
