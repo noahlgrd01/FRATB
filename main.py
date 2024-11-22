@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
 import sys
+import time
 from modules.design import afficherLogo, texteRouge, texteVert, texteBleu, texteJaune, texteBlanc, texteMagenta, separateur
 from modules.system import effacerTerminal
-import time
 
 def help():
     effacerTerminal()
