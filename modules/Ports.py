@@ -1,5 +1,5 @@
 import socket
-from design import texteVert, texteRouge, texteJaune
+from modules.design import texteVert, texteRouge, texteJaune
 
 class Ports:
     def __init__(self, cible):
@@ -31,13 +31,14 @@ class Ports:
             8080: "HTTP (Alt.)",
         }
 
+        print(texteVert("Vert = ouvert\n") + texteRouge("Rouge = fermé\n"))
         for port, protocol in famous_ports.items():
             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             result = sock.connect_ex((self.ip_cible, port))
             if result == 0:
-                print(texteJaune("[*] ")+texteVert(f"{port} {protocol}"))
+                print(texteJaune("[*] ") + texteVert(f"{port} {protocol}"))
             else:
-                print(texteJaune("[*] ")+texteRouge(f"{port} {protocol}"))
+                print(texteJaune("[*] ") + texteRouge(f"{port} {protocol}"))
             sock.close()
 
     def everyPorts(self):

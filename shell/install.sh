@@ -5,7 +5,7 @@ NC='\033[0m'
 
 # ----------- Création du Wrapper ------------ #
 cd ..
-WRAPPER_PATH="$(pwd)/scripts/wrapper.sh"
+WRAPPER_PATH="$(pwd)/shell/wrapper.sh"
 BIN_PATH="/usr/bin"
 
 echo "#!/bin/bash" > "$WRAPPER_PATH"
