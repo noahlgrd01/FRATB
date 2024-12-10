@@ -1,0 +1,1 @@
+java -jar files/encoder.jar -i files/payload.txt -o inject.bin
